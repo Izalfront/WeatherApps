@@ -44,13 +44,10 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<WeatherResponse?>, response: Response<WeatherResponse?>) {
                 if (response.isSuccessful && response.body() != null) {
                     val weatherResponse: WeatherResponse? = response.body()
-                    val weatherInfo = """
-                        City: ${weatherResponse?.name}
-                        Temperature: ${weatherResponse?.main?.temp}°C
-                        Feels Like: ${weatherResponse?.main?.feels_like}°C
-                        Humidity: ${weatherResponse?.main?.humidity}%
-                    """.trimIndent()
-                    binding.tvWeatherInfo.text = weatherInfo
+                    binding.tvNameCity.text = weatherResponse?.name
+                    binding.tvWeatherInfo.text = "${weatherResponse?.main?.temp}°C"
+                    binding.tvHumidity.text = "${weatherResponse?.main?.humidity}%"
+                    binding.tvFeelsLike.text = "${weatherResponse?.main?.feels_like}°C"
                 } else {
                     binding.tvWeatherInfo.text = "Error: Unable to get weather information."
                 }
