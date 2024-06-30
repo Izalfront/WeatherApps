@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Definisikan dimensi yang digunakan -->
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="default_corner_radius">8dp</dimen>
+    <dimen name="another_radius">12dp</dimen>
+</resources>

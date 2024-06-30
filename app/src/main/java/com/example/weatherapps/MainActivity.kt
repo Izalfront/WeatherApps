@@ -3,7 +3,10 @@ package com.example.weatherapps
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.weatherapps.databinding.ActivityMainBinding
+import com.example.weatherapps.ui.CustomCardView
+import com.example.weatherapps.ui.MyButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val customCard: CustomCardView = findViewById(R.id.customCard)
+        customCard.setBackgroundColor(ContextCompat.getColor(this, R.color.dark_blue))
+        customCard.setCornerRadius(resources.getDimension(R.dimen.another_radius))
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org/")

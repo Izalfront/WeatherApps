@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="CustomCardView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
+</resources>

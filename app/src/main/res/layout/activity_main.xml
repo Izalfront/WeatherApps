@@ -75,21 +75,57 @@
         android:layout_marginTop="34dp"
         android:hint="Enter city name"
         android:textColor="@color/white"
+        android:gravity="center"
         android:textColorHint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvHumidity"/>
 
-    <Button
+
+    <com.example.weatherapps.ui.MyButton
         android:id="@+id/btnGetWeather"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Get Weather"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/dark_blue"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCityName"/>
 
+    <com.example.weatherapps.ui.CustomCardView
+        android:id="@+id/customCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:backgroundColor="@color/dark_blue"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGetWeather"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/descCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear condition, from 02.00 - 05.00, with mostly cloudy conditions expected at 07.00."
+                android:textColor="@android:color/white"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/timeCondiction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time: 02.00(23°C) | 03.00(23°C) | 04.00(22°C) |"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+    </com.example.weatherapps.ui.CustomCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
